@@ -1,0 +1,7 @@
+net\openwebinars\java\mysql\crud\Menu$KeyboardReader.class
+net\openwebinars\java\mysql\crud\model\Productos.class
+net\openwebinars\java\mysql\crud\pool\MyDataSource.class
+net\openwebinars\java\mysql\crud\dao\ProductosDaoImpl.class
+net\openwebinars\java\mysql\crud\App.class
+net\openwebinars\java\mysql\crud\dao\ProductosDao.class
+net\openwebinars\java\mysql\crud\Menu.class
