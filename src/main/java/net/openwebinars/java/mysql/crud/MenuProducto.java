@@ -1,7 +1,8 @@
 package net.openwebinars.java.mysql.crud;
 
-import net.openwebinars.java.mysql.crud.dao.ProductosDaoImpl;
-import net.openwebinars.java.mysql.crud.model.Productos;
+import net.openwebinars.java.mysql.crud.dao.ProductoDao;
+import net.openwebinars.java.mysql.crud.dao.ProductoDaoImpl;
+import net.openwebinars.java.mysql.crud.model.Producto;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -13,14 +14,14 @@ import java.util.List;
 import java.util.StringTokenizer;
 import java.util.stream.IntStream;
 
-public class Menu {
+public class MenuProducto {
 
     private KeyboardReader reader;
-    private ProductosDaoImpl dao;
+    private ProductoDao dao;
 
-    public Menu() {
+    public MenuProducto() {
         reader = new KeyboardReader();
-        dao = ProductosDaoImpl.getInstance();
+        dao = ProductoDaoImpl.getInstance();
     }
 
     public void init() {
@@ -80,15 +81,13 @@ public class Menu {
         System.out.print("Introduzca la fecha de caducidad del producto (formato dd/MM/aaaa): ");
         LocalDate fechaCaducidad = reader.nextLocalDate();
 
-        System.out.print("Introduzca el color: ");
-        String color = reader.nextLine();
-
         try {
-            dao.add(new Productos(nombre, fechaCaducidad, color));
+            dao.add(new Producto(nombre, fechaCaducidad));
             System.out.println("Nuevo producto registrado");
         } catch (SQLException e) {
             System.err.println("Error insertando el nuevo registro en la base de datos. Vuelva a intentarlo de nuevo o póngase en contacto con el administrador.");
         }
+
         System.out.println("");
     }
 
@@ -97,7 +96,7 @@ public class Menu {
         System.out.println("--------------------------------\n");
 
         try {
-            List<Productos> result = dao.getAll();
+            List<Producto> result = dao.getAll();
 
             if (result.isEmpty())
                 System.out.println("No hay productos registrados en la base de datos");
@@ -105,9 +104,11 @@ public class Menu {
                 printCabeceraTablaProducto();
                 result.forEach(this::printProducto);
             }
+
         } catch (SQLException e) {
             System.err.println("Error consultando en la base de datos. Vuelva a intentarlo de nuevo o póngase en contacto con el administrador.");
         }
+
         System.out.println("\n");
     }
 
@@ -118,7 +119,8 @@ public class Menu {
         try {
             System.out.print("Introduzca el ID del producto a buscar: ");
             int id = reader.nextInt();
-            Productos producto = dao.getById(id);
+
+            Producto producto = dao.getById(id);
 
             if (producto == null)
                 System.out.println("No hay productos registrados en la base de datos con ese ID");
@@ -126,7 +128,9 @@ public class Menu {
                 printCabeceraTablaProducto();
                 printProducto(producto);
             }
+
             System.out.println("\n");
+
         } catch (SQLException ex) {
             System.err.println("Error consultando en la base de datos. Vuelva a intentarlo de nuevo o póngase en contacto con el administrador.");
         }
@@ -139,79 +143,79 @@ public class Menu {
         try {
             System.out.print("Introduzca el ID del producto a buscar: ");
             int id = reader.nextInt();
-            Productos producto = dao.getById(id);
 
-            if (producto == null) {
+            Producto producto = dao.getById(id);
+
+            if (producto == null)
                 System.out.println("No hay productos registrados en la base de datos con ese ID");
-            } else {
+            else {
                 printCabeceraTablaProducto();
                 printProducto(producto);
                 System.out.println("\n");
 
-                System.out.printf("Introduzca el nombre del producto (%s): ", producto.getNombre());
+                System.out.print("Introduzca el nombre del producto: ");
                 String nombre = reader.nextLine();
-                nombre = (nombre.isBlank()) ? producto.getNombre() : nombre;
+                nombre = (nombre.isBlank()) ? producto.getNombreProducto() : nombre;
 
-                System.out.printf("Introduzca la fecha de caducidad del producto (formato dd/MM/aaaa) (%s): ", producto.getFechaCaducidad().format(DateTimeFormatter.ofPattern("dd/MM/yyyy")));
+                System.out.printf("Introduzca la fecha de caducidad del producto (formato dd/MM/aaaa) (%s): ",
+                        producto.getFechaCaducidad().format(DateTimeFormatter.ofPattern("dd/MM/yyyy")));
                 String strFechaCaducidad = reader.nextLine();
-                LocalDate fechaCaducidad = (strFechaCaducidad.isBlank()) ? producto.getFechaCaducidad() : LocalDate.parse(strFechaCaducidad, DateTimeFormatter.ofPattern("dd/MM/yyyy"));
+                LocalDate fechaCaducidad = (strFechaCaducidad.isBlank()) ? producto.getFechaCaducidad() :
+                        LocalDate.parse(strFechaCaducidad, DateTimeFormatter.ofPattern("dd/MM/yyyy"));
 
-                System.out.printf("Introduzca el color del producto (%s): ", producto.getColor());
-                String color = reader.nextLine();
-                color = (color.isBlank()) ? producto.getColor() : color;
-
-                producto.setNombre(nombre);
+                producto.setNombreProducto(nombre);
                 producto.setFechaCaducidad(fechaCaducidad);
-                producto.setColor(color);
 
                 dao.update(producto);
 
                 System.out.println("");
-                System.out.printf("Producto con ID %s actualizado\n", producto.getId_producto());
+                System.out.printf("Producto con ID %s actualizado", producto.getId_producto());
+                System.out.println("");
             }
+
         } catch (SQLException ex) {
             System.err.println("Error consultando en la base de datos. Vuelva a intentarlo de nuevo o póngase en contacto con el administrador.");
         }
     }
 
     public void delete() {
-        System.out.println("\nELIMINACIÓN DE UN PRODUCTO");
-        System.out.println("---------------------------\n");
+        System.out.println("\nBORRADO DE UN PRODUCTO");
+        System.out.println("-----------------------\n");
 
         try {
             System.out.print("Introduzca el ID del producto a borrar: ");
             int id = reader.nextInt();
-            System.out.printf("¿Está seguro de querer eliminar el producto con ID=%s? (s/n): ", id);
-            String confirmacion = reader.nextLine();
 
-            if (confirmacion.equalsIgnoreCase("s")) {
+            System.out.printf("¿Está seguro de querer eliminar el producto con ID=%s? (s/n): ", id);
+            String borrar = reader.nextLine();
+
+            if (borrar.equalsIgnoreCase("s")) {
                 dao.delete(id);
-                System.out.printf("El producto con ID %s se ha eliminado\n", id);
+                System.out.printf("El producto con ID %s se ha borrado\n", id);
             }
+
         } catch (SQLException ex) {
             System.err.println("Error consultando en la base de datos. Vuelva a intentarlo de nuevo o póngase en contacto con el administrador.");
         }
+
         System.out.println("");
     }
 
     private void printCabeceraTablaProducto() {
-        System.out.printf("%2s %30s %14s %10s\n", "ID", "NOMBRE", "FEC. CADUCIDAD", "COLOR");
-        IntStream.range(1, 80).forEach(x -> System.out.print("-"));
-        System.out.println();
+        System.out.printf("%2s %30s %15s", "ID", "NOMBRE", "FECHA CADUCIDAD");
+        System.out.println("");
+        IntStream.range(1, 60).forEach(x -> System.out.print("-"));
+        System.out.println("\n");
     }
-
-    private void printProducto(Productos producto) {
-        System.out.printf("%2d %30s %9s %10s\n",
+    private void printProducto(Producto producto) {
+        System.out.printf("%2s %30s %15s\n",
                 producto.getId_producto(),
-                producto.getNombre(),
-                producto.getFechaCaducidad().format(DateTimeFormatter.ofPattern("dd/MM/yyyy")),
-                producto.getColor());
+                producto.getNombreProducto(),
+                producto.getFechaCaducidad().format(DateTimeFormatter.ofPattern("dd/MM/yyyy")));
     }
-
-
-
 
     static class KeyboardReader {
+
         BufferedReader br;
         StringTokenizer st;
 
@@ -220,6 +224,7 @@ public class Menu {
         }
 
         String next() {
+
             while (st == null || !st.hasMoreElements()) {
                 try {
                     st = new StringTokenizer(br.readLine());
@@ -228,7 +233,9 @@ public class Menu {
                     ex.printStackTrace();
                 }
             }
+
             return st.nextToken();
+
         }
 
         int nextInt() {
@@ -240,7 +247,8 @@ public class Menu {
         }
 
         LocalDate nextLocalDate() {
-            return LocalDate.parse(next(), DateTimeFormatter.ofPattern("dd/MM/yyyy"));
+            return LocalDate.parse(next(),
+                    DateTimeFormatter.ofPattern("dd/MM/yyyy"));
         }
 
         String nextLine() {
@@ -254,6 +262,7 @@ public class Menu {
                 System.err.println("Error leyendo del teclado");
                 ex.printStackTrace();
             }
+
             return str;
         }
     }

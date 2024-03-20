@@ -1,63 +1,63 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="net.openwebinars.java.mysql.crud.TestApp" time="0.027" tests="1" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="net.openwebinars.java.mysql.crud.TestApp" time="0.017" tests="1" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="21"/>
     <property name="sun.cpu.isalist" value="amd64"/>
     <property name="sun.jnu.encoding" value="Cp1252"/>
-    <property name="java.class.path" value="E:\repos\java-mysql-crud\the-lab-project\target\test-classes;E:\repos\java-mysql-crud\the-lab-project\target\classes;C:\Users\himelmaj\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.8.2\junit-jupiter-engine-5.8.2.jar;C:\Users\himelmaj\.m2\repository\org\junit\platform\junit-platform-engine\1.8.2\junit-platform-engine-1.8.2.jar;C:\Users\himelmaj\.m2\repository\org\opentest4j\opentest4j\1.2.0\opentest4j-1.2.0.jar;C:\Users\himelmaj\.m2\repository\org\junit\platform\junit-platform-commons\1.8.2\junit-platform-commons-1.8.2.jar;C:\Users\himelmaj\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.8.2\junit-jupiter-api-5.8.2.jar;C:\Users\himelmaj\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\himelmaj\.m2\repository\mysql\mysql-connector-java\8.0.11\mysql-connector-java-8.0.11.jar;C:\Users\himelmaj\.m2\repository\com\google\protobuf\protobuf-java\2.6.0\protobuf-java-2.6.0.jar;C:\Users\himelmaj\.m2\repository\com\zaxxer\HikariCP\5.0.1\HikariCP-5.0.1.jar;C:\Users\himelmaj\.m2\repository\org\slf4j\slf4j-api\2.0.0-alpha1\slf4j-api-2.0.0-alpha1.jar;"/>
+    <property name="java.class.path" value="C:\repos\the-lab-project\target\test-classes;C:\repos\the-lab-project\target\classes;C:\Users\himel\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.8.2\junit-jupiter-engine-5.8.2.jar;C:\Users\himel\.m2\repository\org\junit\platform\junit-platform-engine\1.8.2\junit-platform-engine-1.8.2.jar;C:\Users\himel\.m2\repository\org\opentest4j\opentest4j\1.2.0\opentest4j-1.2.0.jar;C:\Users\himel\.m2\repository\org\junit\platform\junit-platform-commons\1.8.2\junit-platform-commons-1.8.2.jar;C:\Users\himel\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.8.2\junit-jupiter-api-5.8.2.jar;C:\Users\himel\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\himel\.m2\repository\mysql\mysql-connector-java\8.0.11\mysql-connector-java-8.0.11.jar;C:\Users\himel\.m2\repository\com\google\protobuf\protobuf-java\2.6.0\protobuf-java-2.6.0.jar;C:\Users\himel\.m2\repository\com\zaxxer\HikariCP\5.0.1\HikariCP-5.0.1.jar;C:\Users\himel\.m2\repository\org\slf4j\slf4j-api\2.0.0-alpha1\slf4j-api-2.0.0-alpha1.jar;"/>
     <property name="java.vm.vendor" value="Oracle Corporation"/>
     <property name="sun.arch.data.model" value="64"/>
     <property name="user.variant" value=""/>
     <property name="java.vendor.url" value="https://java.oracle.com/"/>
     <property name="user.timezone" value="Europe/Madrid"/>
-    <property name="os.name" value="Windows 10"/>
+    <property name="os.name" value="Windows 11"/>
     <property name="java.vm.specification.version" value="21"/>
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="ES"/>
-    <property name="sun.boot.library.path" value="C:\Users\himelmaj\.jdks\openjdk-21.0.1\bin"/>
-    <property name="sun.java.command" value="C:\Users\himelmaj\AppData\Local\Temp\surefire15594993221140892532\surefirebooter15374624614704745063.jar C:\Users\himelmaj\AppData\Local\Temp\surefire15594993221140892532 2024-03-18T20-18-49_206-jvmRun1 surefire7343675571230108593tmp surefire_0338972445070588231tmp"/>
+    <property name="sun.boot.library.path" value="C:\Users\himel\.jdks\openjdk-21.0.2\bin"/>
+    <property name="sun.java.command" value="C:\Users\himel\AppData\Local\Temp\surefire2927855012369508400\surefirebooter10877503067867442015.jar C:\Users\himel\AppData\Local\Temp\surefire2927855012369508400 2024-03-18T22-20-39_931-jvmRun1 surefire3177298019625779240tmp surefire_03029339602757759526tmp"/>
     <property name="jdk.debug" value="release"/>
-    <property name="surefire.test.class.path" value="E:\repos\java-mysql-crud\the-lab-project\target\test-classes;E:\repos\java-mysql-crud\the-lab-project\target\classes;C:\Users\himelmaj\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.8.2\junit-jupiter-engine-5.8.2.jar;C:\Users\himelmaj\.m2\repository\org\junit\platform\junit-platform-engine\1.8.2\junit-platform-engine-1.8.2.jar;C:\Users\himelmaj\.m2\repository\org\opentest4j\opentest4j\1.2.0\opentest4j-1.2.0.jar;C:\Users\himelmaj\.m2\repository\org\junit\platform\junit-platform-commons\1.8.2\junit-platform-commons-1.8.2.jar;C:\Users\himelmaj\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.8.2\junit-jupiter-api-5.8.2.jar;C:\Users\himelmaj\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\himelmaj\.m2\repository\mysql\mysql-connector-java\8.0.11\mysql-connector-java-8.0.11.jar;C:\Users\himelmaj\.m2\repository\com\google\protobuf\protobuf-java\2.6.0\protobuf-java-2.6.0.jar;C:\Users\himelmaj\.m2\repository\com\zaxxer\HikariCP\5.0.1\HikariCP-5.0.1.jar;C:\Users\himelmaj\.m2\repository\org\slf4j\slf4j-api\2.0.0-alpha1\slf4j-api-2.0.0-alpha1.jar;"/>
+    <property name="surefire.test.class.path" value="C:\repos\the-lab-project\target\test-classes;C:\repos\the-lab-project\target\classes;C:\Users\himel\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.8.2\junit-jupiter-engine-5.8.2.jar;C:\Users\himel\.m2\repository\org\junit\platform\junit-platform-engine\1.8.2\junit-platform-engine-1.8.2.jar;C:\Users\himel\.m2\repository\org\opentest4j\opentest4j\1.2.0\opentest4j-1.2.0.jar;C:\Users\himel\.m2\repository\org\junit\platform\junit-platform-commons\1.8.2\junit-platform-commons-1.8.2.jar;C:\Users\himel\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.8.2\junit-jupiter-api-5.8.2.jar;C:\Users\himel\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\himel\.m2\repository\mysql\mysql-connector-java\8.0.11\mysql-connector-java-8.0.11.jar;C:\Users\himel\.m2\repository\com\google\protobuf\protobuf-java\2.6.0\protobuf-java-2.6.0.jar;C:\Users\himel\.m2\repository\com\zaxxer\HikariCP\5.0.1\HikariCP-5.0.1.jar;C:\Users\himel\.m2\repository\org\slf4j\slf4j-api\2.0.0-alpha1\slf4j-api-2.0.0-alpha1.jar;"/>
     <property name="sun.cpu.endian" value="little"/>
-    <property name="user.home" value="C:\Users\himelmaj"/>
+    <property name="user.home" value="C:\Users\himel"/>
     <property name="user.language" value="es"/>
     <property name="java.specification.vendor" value="Oracle Corporation"/>
-    <property name="java.version.date" value="2023-10-17"/>
-    <property name="java.home" value="C:\Users\himelmaj\.jdks\openjdk-21.0.1"/>
+    <property name="java.version.date" value="2024-01-16"/>
+    <property name="java.home" value="C:\Users\himel\.jdks\openjdk-21.0.2"/>
     <property name="file.separator" value="\"/>
-    <property name="basedir" value="E:\repos\java-mysql-crud\the-lab-project"/>
+    <property name="basedir" value="C:\repos\the-lab-project"/>
     <property name="java.vm.compressedOopsMode" value="Zero based"/>
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="surefire.real.class.path" value="C:\Users\himelmaj\AppData\Local\Temp\surefire15594993221140892532\surefirebooter15374624614704745063.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\himel\AppData\Local\Temp\surefire2927855012369508400\surefirebooter10877503067867442015.jar"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
-    <property name="java.runtime.version" value="21.0.1+12-29"/>
-    <property name="user.name" value="neurolab-test"/>
+    <property name="java.runtime.version" value="21.0.2+13-58"/>
+    <property name="user.name" value="himel"/>
     <property name="stdout.encoding" value="Cp1252"/>
     <property name="path.separator" value=";"/>
     <property name="os.version" value="10.0"/>
     <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
     <property name="file.encoding" value="UTF-8"/>
     <property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
-    <property name="localRepository" value="C:\Users\himelmaj\.m2\repository"/>
+    <property name="localRepository" value="C:\Users\himel\.m2\repository"/>
     <property name="java.vendor.url.bug" value="https://bugreport.java.com/bugreport/"/>
-    <property name="java.io.tmpdir" value="C:\Users\himelmaj\AppData\Local\Temp\"/>
-    <property name="idea.version" value="2023.3.3"/>
-    <property name="java.version" value="21.0.1"/>
-    <property name="user.dir" value="E:\repos\java-mysql-crud\the-lab-project"/>
+    <property name="java.io.tmpdir" value="C:\Users\himel\AppData\Local\Temp\"/>
+    <property name="idea.version" value="2023.3.5"/>
+    <property name="java.version" value="21.0.2"/>
+    <property name="user.dir" value="C:\repos\the-lab-project"/>
     <property name="os.arch" value="amd64"/>
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
     <property name="sun.os.patch.level" value=""/>
     <property name="native.encoding" value="Cp1252"/>
-    <property name="java.library.path" value="C:\Users\himelmaj\.jdks\openjdk-21.0.1\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Python312\Scripts\;C:\Python312\;C:\Program Files\Eclipse Adoptium\jdk-11.0.20.8-hotspot\bin;C:\Program Files\Amazon Corretto\jdk11.0.20_9\bin;C:\Program Files\Eclipse Adoptium\jdk-17.0.8.7-hotspot\bin;C:\Program Files\Amazon Corretto\jdk17.0.8_8\bin;C:\Program Files\Amazon Corretto\jdk1.8.0_382\bin;C:\Program Files (x86)\Amazon Corretto\jdk1.8.0_382\bin;C:\Program Files (x86)\Eclipse Adoptium\jdk-8.0.382.5-hotspot\bin;C:\Program Files\Eclipse Adoptium\jdk-8.0.382.5-hotspot\bin;C:\Program Files\Eclipse Adoptium\jre-8.0.382.5-hotspot\bin;C:\Program Files\Eclipse Adoptium\jre-17.0.8.7-hotspot\bin;C:\Program Files\Eclipse Adoptium\jre-11.0.20.8-hotspot\bin;C:\Program Files (x86)\Eclipse Adoptium\jre-8.0.382.5-hotspot\bin;C:\Program Files (x86)\VMware\VMware Workstation\bin\;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\PuTTY\;C:\Program Files\Microsoft VS Code\bin;C:\Program Files (x86)\dotnet\;C:\Program Files\dotnet\;C:\Program Files\Git\cmd;C:\Program Files (x86)\Windows Kits\10\Windows Performance Toolkit\;C:\ProgramData\chocolatey\bin;C:\Program Files\Docker\Docker\resources\bin;C:\Program Files\nodejs\;C:\Program Files\Tailscale\;C:\Program Files\Cloudflare\Cloudflare WARP\;C:\Users\himelmaj\AppData\Local\pnpm;C:\Users\himelmaj\.console-ninja\.bin;C:\Users\himelmaj\AppData\Local\Programs\Python\Python311\Scripts\;C:\Users\himelmaj\AppData\Local\Programs\Python\Python311\;C:\Users\himelmaj\AppData\Local\Microsoft\WindowsApps;C:\Users\himelmaj\AppData\Local\JetBrains\Toolbox\scripts;;C:\Users\himelmaj\AppData\Local\Programs\oh-my-posh\bin;C:\Program Files (x86)\Nmap;E:\xampp\php;C:\Users\himelmaj\AppData\Local\ComposerSetup\bin;C:\Users\himelmaj\AppData\Roaming\Composer\vendor\bin;C:\Users\himelmaj\AppData\Roaming\npm;."/>
+    <property name="java.library.path" value="C:\Users\himel\.jdks\openjdk-21.0.2\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Program Files\Alacritty\;C:\Program Files (x86)\VMware\VMware Workstation\bin\;C:\Python312\Scripts\;C:\Python312\;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files\Eclipse Adoptium\jre-8.0.382.5-hotspot\bin;C:\Program Files\Eclipse Adoptium\jre-17.0.8.7-hotspot\bin;C:\Program Files\Eclipse Adoptium\jre-11.0.20.8-hotspot\bin;C:\Program Files (x86)\Eclipse Adoptium\jre-8.0.382.5-hotspot\bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\PuTTY\;C:\Program Files\Microsoft VS Code\bin;C:\Program Files (x86)\dotnet\;C:\Program Files\dotnet\;C:\Program Files\Git\cmd;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\ProgramData\chocolatey\bin;C:\Program Files\Docker\Docker\resources\bin;C:\Program Files\nodejs\;C:\xampp\php;C:\ProgramData\ComposerSetup\bin;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Tailscale\;C:\Program Files\Cloudflare\Cloudflare WARP\;C:\Users\himel\AppData\Local\pnpm;C:\Users\himel\scoop\shims;C:\Users\himel\AppData\Local\pnpm;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Users\himel\.console-ninja\.bin;C:\Users\himel\AppData\Local\Programs\Python\Python311\Scripts\;C:\Users\himel\AppData\Local\Programs\Python\Python311\;C:\Users\himel\AppData\Local\Microsoft\WindowsApps;C:\Users\himel\AppData\Local\JetBrains\Toolbox\scripts;C:\Users\himel\AppData\Local\Programs\oh-my-posh\bin;C:\Users\himel\AppData\Local\GitHubDesktop\bin;C:\Program Files\MongoDB\Server\7.0\bin;C:\Users\himel\AppData\Local\Google\Cloud SDK\google-cloud-sdk\bin;C:\Users\himel\AppData\Local\spicetify;C:\Users\himel\AppData\Roaming\npm;C:\Users\himel\.dotnet\tools;C:\Users\himel\.bun\bin;C:\Program Files (x86)\Nmap;C:\Users\himel\AppData\Roaming\Composer\vendor\bin;C:\Users\himel\AppData\Local\gitkraken\bin;C:\Users\himel\AppData\Local\Microsoft\WindowsApps;."/>
     <property name="java.vm.info" value="mixed mode, sharing"/>
     <property name="stderr.encoding" value="Cp1252"/>
     <property name="java.vendor" value="Oracle Corporation"/>
-    <property name="java.vm.version" value="21.0.1+12-29"/>
+    <property name="java.vm.version" value="21.0.2+13-58"/>
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="65.0"/>
   </properties>
-  <testcase name="testSomething" classname="net.openwebinars.java.mysql.crud.TestApp" time="0.023"/>
+  <testcase name="testSomething" classname="net.openwebinars.java.mysql.crud.TestApp" time="0.014"/>
 </testsuite>

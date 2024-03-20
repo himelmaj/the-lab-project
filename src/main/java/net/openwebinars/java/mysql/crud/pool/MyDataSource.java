@@ -13,10 +13,10 @@ public class MyDataSource {
 
     static {
 
-        config.setJdbcUrl("jdbc:mysql://${server}:${port}/${database}?allowPublicKeyRetrieval=true" +
+        config.setJdbcUrl("jdbc:mysql://localhost:3306/empresa?allowPublicKeyRetrieval=true" +
                 "&useSSL=false&useUnicode=true&serverTimezone=Europe/Madrid");
-        config.setUsername("${username}");
-        config.setPassword("${password}");
+        config.setUsername("user");
+        config.setPassword("password");
         config.addDataSourceProperty("maximumPoolSize", 1);
         // propiedades propuestas en la web de HikariCP para MySQL
         // se puede consultar más en https://github.com/brettwooldridge/HikariCP/wiki/MySQL-Configuration

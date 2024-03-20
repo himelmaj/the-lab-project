@@ -1,8 +1,8 @@
 package net.openwebinars.java.mysql.crud;
 
-import net.openwebinars.java.mysql.crud.dao.ProductosDao;
-import net.openwebinars.java.mysql.crud.dao.ProductosDaoImpl;
-import net.openwebinars.java.mysql.crud.model.Productos;
+import net.openwebinars.java.mysql.crud.dao.EmpleadoDao;
+import net.openwebinars.java.mysql.crud.dao.EmpleadoDaoImpl;
+import net.openwebinars.java.mysql.crud.model.Empleado;
 import net.openwebinars.java.mysql.crud.pool.MyDataSource;
 
 import java.sql.Connection;
@@ -15,62 +15,76 @@ import java.util.List;
 public class App {
 
     public static void main(String[] args) {
-        Menu menu = new Menu();
-        menu.init();
+        MenuEmpleado menuEmpleado = new MenuEmpleado();
+        MenuProducto menuProducto = new MenuProducto();
+
+        menuProducto.init();
+
     }
 
     public static void testDao() {
-        ProductosDao dao = (ProductosDao) ProductosDaoImpl.getInstance();
 
-        Productos prod = new Productos("Producto1", LocalDate.of(2024, 3, 15), "Azul");
+        EmpleadoDao dao = EmpleadoDaoImpl.getInstance();
+
+        Empleado emp = new Empleado("Luis Miguel", "López Magaña", LocalDate.of(1982, 9, 18),
+                "Profesor", "luismi@openwebinars.net");
 
         try {
-            int n = dao.add(prod);
-            System.out.println("Número de registros insertados: " + n);
+            int n = dao.add(emp);
+            System.out.println("El número de registros insertados es: " + n);
 
-            List<Productos> productos = dao.getAll();
+            List<Empleado> empleados = dao.getAll();
 
-            if (productos.isEmpty())
-                System.out.println("No hay productos registrados");
+            if (empleados.isEmpty())
+                System.out.println("No hay empleados registrados");
             else
-                productos.forEach(System.out::println);
+                empleados.forEach(System.out::println);
 
-            Productos prod1 = dao.getById(1);
+            Empleado emp1 = dao.getById(1);
 
-            System.out.println("\n" + prod1 + "\n");
+            System.out.println("\n" + emp1 + "\n");
 
-            prod1.setColor("Verde");
+            emp1.setFechaNacimiento(LocalDate.of(1992, 9, 19));
 
-            n = dao.update(prod1);
+            n = dao.update(emp1);
 
-            prod1 = dao.getById(1);
+            emp1 = dao.getById(1);
 
-            System.out.println("\n" + prod1 + "\n");
+            System.out.println("\n" + emp1 + "\n");
 
             dao.delete(1);
 
-            productos = dao.getAll();
-            if (productos.isEmpty())
-                System.out.println("No hay productos registrados");
+            empleados = dao.getAll();
+            if (empleados.isEmpty())
+                System.out.println("No hay empleados registrados");
             else
-                productos.forEach(System.out::println);
+                empleados.forEach(System.out::println);
+
+
+
 
         } catch (SQLException e) {
             e.printStackTrace();
         }
+
     }
 
     public static void testPool() {
         try (Connection conn = MyDataSource.getConnection()) {
+
             DatabaseMetaData metaData = conn.getMetaData();
             String[] types = {"TABLE"};
             ResultSet tables = metaData.getTables(null, null, "%", types);
 
-            while (tables.next()) {
+            while(tables.next()) {
                 System.out.println(tables.getString("TABLE_NAME"));
             }
+
+
         } catch (SQLException e) {
             e.printStackTrace();
         }
+
     }
+
 }
